@@ -1,0 +1,15 @@
+material: SPONGE
+rewards:
+  #Name of the reward does not matter in any way - call it as you want
+  reward1:
+    #Commands to be executed as CONSOLE - use %player% for the player name
+    #Remove to disable
+    commands:
+      - 'broadcast This is a test! Hello, %player%!'
+    #Message sent to the player that broke the block - set to '' to disable
+    message: '&aCongratulations, you just found 100 Coins!'
+    #Coins reward for the player - set to 0 to disable
+    coins: 100
+  reward2:
+    message: '&aCongratulations, you just found 2359 Coins!'
+    coins: 2359

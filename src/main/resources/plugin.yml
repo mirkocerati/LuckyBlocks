@@ -1,0 +1,12 @@
+name: LuckyBlocks
+version: ${project.version}
+
+author: Aubenoire
+
+main: com.aubenoire.luckyblocks.LuckyBlocks
+
+depend:
+  - Vault
+
+commands:
+  luckyblocks:
