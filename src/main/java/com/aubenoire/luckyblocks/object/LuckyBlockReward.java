@@ -6,7 +6,7 @@ import lombok.Getter;
 import java.util.List;
 
 @AllArgsConstructor
-public class Reward {
+public class LuckyBlockReward {
 
     /**
      * List of commands as String

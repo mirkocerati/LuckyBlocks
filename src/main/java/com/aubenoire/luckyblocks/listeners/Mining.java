@@ -2,7 +2,7 @@ package com.aubenoire.luckyblocks.listeners;
 
 import com.aubenoire.luckyblocks.LuckyBlocks;
 import com.aubenoire.luckyblocks.configuration.Options;
-import com.aubenoire.luckyblocks.object.Reward;
+import com.aubenoire.luckyblocks.object.LuckyBlockReward;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -24,7 +24,7 @@ public record Mining(LuckyBlocks instance) implements Listener {
             event.setExpToDrop(0);
             Player player = event.getPlayer();
             int rand = new Random().nextInt(Options.REWARDS.size());
-            Reward reward = Options.REWARDS.get(rand);
+            LuckyBlockReward reward = Options.REWARDS.get(rand);
 
             if(reward.getCoins() > 0) {
                 instance.getVaultEconomy().depositPlayer(player, reward.getCoins());

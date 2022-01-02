@@ -3,7 +3,7 @@ package com.aubenoire.luckyblocks;
 import com.aubenoire.luckyblocks.command.MainCommand;
 import com.aubenoire.luckyblocks.configuration.Options;
 import com.aubenoire.luckyblocks.listeners.Mining;
-import com.aubenoire.luckyblocks.object.Reward;
+import com.aubenoire.luckyblocks.object.LuckyBlockReward;
 import lombok.Getter;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
@@ -49,9 +49,9 @@ public class LuckyBlocks extends JavaPlugin {
      * Load rewards from config.yml
      */
     public void loadRewards() {
-        List<Reward> rewards = new ArrayList<>();
+        List<LuckyBlockReward> rewards = new ArrayList<>();
         getConfig().getConfigurationSection("rewards").getKeys(false).forEach(key -> {
-            rewards.add(new Reward(getConfig().getStringList("rewards." + key + ".commands"), getConfig().getString("rewards." + key + ".message").replaceAll("&", "§"), (float)getConfig().getDouble("rewards." + key + ".coins")));
+            rewards.add(new LuckyBlockReward(getConfig().getStringList("rewards." + key + ".commands"), getConfig().getString("rewards." + key + ".message").replaceAll("&", "§"), (float)getConfig().getDouble("rewards." + key + ".coins")));
         });
         Options.REWARDS = rewards;
     }
